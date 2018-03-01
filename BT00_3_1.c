@@ -68,7 +68,7 @@ int main()
     //tim kiem chuoi
     char s4[] = "minh";
     dem2 = 0;dem3 = 0;dem4 = 0;
-    /*while(s4[dem2] != NULL)
+    while(s4[dem2] != NULL)
         dem2++;
     for(i=0;i<dem/2;i++) //do nguoc lai xau s ve ban dau
     {
@@ -100,7 +100,7 @@ int main()
         i++;
         dem4 = 0;
     }
-    printf("Chuoi '%s' xuat hien %d lan",s4,dem4);*/
+    printf("Chuoi '%s' xuat hien %d lan",s4,dem4);
 
 
     printf("\n----------------------------------\n");
