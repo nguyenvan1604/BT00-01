@@ -27,7 +27,7 @@ int main()
     //tinh tong cua mang
     int S=0;
     for(i=0;i<n;i++)
-        S+=*(p+i);
+        S += *(p+i);
     printf("\nTong cua mang: %d",S);
     //tinh gia tri trung binh
     printf("\nGia tri trung binh cua mang: %4.2f",(float)S/n);
