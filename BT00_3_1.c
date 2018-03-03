@@ -5,13 +5,15 @@ int main()
     //In chuoi
     char s[] = "co nhung noi dau tu minh phai vui sau";
     printf("%s",s);
+
     //Tim do dai chuoi
     int dem = 0;
     while(s[dem] != NULL)
         dem++;
     printf("\nDo dai chuoi: %d",dem);
     //Dem so lan xuat hien cua ky tu
-    char ch = 'l';
+
+    char ch = 'a';
     int dem2 = 0;
     int i=0, j =0;
     while(s[i] != NULL)
@@ -21,6 +23,7 @@ int main()
         i++;
     }
     printf("\nSo lan xuat hien cua ky tu '%c' trong chuoi: %d",ch,dem2);
+
     //Dem so nguyen am ,phu am
     i=0;
     int dem3 = 0, dem4 = 0;
@@ -34,6 +37,7 @@ int main()
         i++;
     }
     printf("\nSo nguyen am, phu am trong chuoi la: %d, %d",dem3,dem4);
+
     //Sao chep chuoi
     char s3[38];
     i=0;
@@ -45,8 +49,8 @@ int main()
     s3[i] = NULL;
     printf("\nChuoi ban dau: %s",s);
     printf("\nChuoi sao chep: %s",s3);
-    //Sap xep ky tu cua chuoi
 
+    //Sap xep ky tu cua chuoi
     char temp;
     for(i=0;i<dem-1;i++)
         for(j=i+1;j<dem;j++)
@@ -65,45 +69,45 @@ int main()
         s[dem-1-i] = temp;
     }
     printf("\nChuoi dao nguoc: %s",s);
+
     //tim kiem chuoi
-    char s4[] = "minh";
-    dem2 = 0;dem3 = 0;dem4 = 0;
-    while(s4[dem2] != NULL)
-        dem2++;
-    for(i=0;i<dem/2;i++) //do nguoc lai xau s ve ban dau
+    for(i=0;i<dem/2;i++)//Dao nguoc lai nhu ban dau
     {
         temp = s[i];
         s[i] = s[dem-1-i];
         s[dem-1-i] = temp;
     }
+    char s4[] = "dau";
+    dem2 = 0;dem3 = 0;dem4 = 0;
+    while(s4[dem2] != NULL)
+        dem2++;
     i=0;
     while(s[i] != NULL)
     {
-        if(s[i] == s4[i])
+        if(s[i] == s4[dem3])
         {
-            while(s[i] == s4[i] && s[i] != NULL)
+            while(s[i] == s4[dem3]  && s[i] != NULL)
             {
                 i++;
                 dem3++;
             }
-
             if(dem3 == dem2 && (s[i] == 32 || s[i] == NULL))
-            dem4++;
-        }
-        else
+                dem4++;
+            else
             while(s[i] != 32)
             {
                 i++;
-                if(s[i] == 32)
+                if(s[i] == NULL)
                     break;
             }
+        }
         i++;
-        dem4 = 0;
+        dem3=0;
     }
-    printf("Chuoi '%s' xuat hien %d lan",s4,dem4);
-
+    printf("\nChuoi '%s' xuat hien %d lan\n", s4, dem4);
 
     printf("\n----------------------------------\n");
+
     //So sanh 2 chuoi
     char s5[] = "Hello", s6[] = "hi";
     printf("Hai chuoi ban dau: s5(%s) va s6(%s)",s5,s6);
