@@ -2,8 +2,8 @@
 
 int main()
 {
-    char s1[] = "hello";
-    char s2[] = "holle";
+    char s1[] = "ueoai";
+    char s2[] = "oaiue";
     int i,j;
     printf("Hai chuoi ban dau: s1(%s) va s2(%s)",s1,s2);
     int dem1=0, dem2=0;
