@@ -17,7 +17,7 @@ int main()
 	float *p3 = &c, *p4 = &d;
 	swap(&p3, &p4);
 
-    printf("a = %-2d, b = %-2d\n", *p1, *p2);
+	printf("a = %-2d, b = %-2d\n", *p1, *p2);
 	printf("c = %.2f, d = %.2f", *p3, *p4);
 
 	return 0;
