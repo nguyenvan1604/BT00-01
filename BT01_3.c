@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct data{
+typedef struct data
+    {
     int a;
     float b;
     } data;
@@ -8,9 +9,11 @@ int compare(data x, data y)
 {
     if(x.a>y.a || (x.a=y.a && x.b >y.b))
         return 1;
-    else if (x.a==y.a && x.b == y.b)
-        return 0;
-    else return -1;
+    else
+        if(x.a==y.a && x.b == y.b)
+            return 0;
+        else
+            return -1;
 }
 void bubble_sort(data arr[], int n, int (*f)(data x, data y))
 {
@@ -40,7 +43,7 @@ int main()
     arr[3].a=-5; arr[3].b=2;
     bubble_sort(arr, 4, compare);
     int i;
-    for (i=0; i<4; i++)
-        printf ("%d\t%f\n", arr[i].a, arr[i].b); //Van in ra dung boi vi khong su dung bien cuc bo trong ham bubble_sỏt
+    for(i=0; i<4; i++)
+        printf("%d\t%f\n", arr[i].a, arr[i].b); //Van in ra dung boi vi khong su dung bien cuc bo trong ham bubble_sỏt
     return 0;
 }
