@@ -109,7 +109,7 @@ int main()
     printf("\n----------------------------------\n");
 
     //So sanh 2 chuoi
-    char s5[] = "Hello", s6[] = "hi";
+    char s5[] = "hello", s6[] = "hi";
     printf("Hai chuoi ban dau: s5(%s) va s6(%s)",s5,s6);
     dem4 = 1;
     i = 0;
@@ -134,7 +134,7 @@ int main()
         dem2++;
     while(s6[dem3] != NULL)
         dem3++;
-
+    j =0;
     for(i=dem2;i<dem2+dem3;i++)
     {
         s5[i] = s6[j];
@@ -155,6 +155,7 @@ int main()
         s8[i] = temp;
         i++;
     }
+    s8[i] = NULL;
     printf("\nSau khi trao doi ta duoc: s5(%s) va s6(%s)",s7,s8);
 
     return 0;
