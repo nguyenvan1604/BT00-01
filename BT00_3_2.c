@@ -1,44 +1,100 @@
 #include<stdio.h>
+#include<conio.h>
+#include<string.h>
 
 int main()
 {
-    char s1[] = "ueoai";
-    char s2[] = "oaiue";
-    int i,j;
-    printf("Hai chuoi ban dau: s1(%s) va s2(%s)",s1,s2);
-    int dem1=0, dem2=0;
-    char temp;
-    while(s1[dem1] != NULL)
-        dem1++;
-    while(s2[dem2] != NULL)
-        dem2++;
+    char a[30], b[30];
+    printf("Nhap chuoi thu 1: ");
+    fflush(stdin);
+    gets(a);
+    printf("Nhap chuoi thu 2: ");
+    fflush(stdin);
+    gets(b);
+    printf("\n-----------------------\n");
+    int dem1 = strlen(a) + 1, dem2 = strlen(b) + 1;
     if(dem1 != dem2)
         {
-            printf("\nHai chuoi khong phai la anagram");
+            printf("\n\tN1");
             return 0;
         }
+    int i,j;
+    char temp;
     for(i=0;i<dem1-1;i++)
         for(j=i+1;j<dem1;j++)
     {
-        if(s1[i]>s1[j])
+        if(a[i]>a[j])
         {
-            temp = s1[i];
-            s1[i] = s1[j];
-            s1[j] = temp;
+            temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
         }
-        if(s2[i]>s2[j])
+        if(b[i]>b[j])
         {
-            temp = s2[i];
-            s2[i] = s2[j];
-            s2[j] = temp;
+            temp = b[i];
+            b[i] = b[j];
+            b[j] = temp;
         }
     }
     for(i=0;i<dem1;i++)
-        if(s1[i] != s2[i])
+        if(a[i] != b[i])
         {
-            printf("\nHai chuoi khong phai la anagram");
+            printf("\n\tNe");
             return 0;
         }
-    printf("\nHai chuoi la anagram");
+    printf("\n\tY");
     return 0;
 }
+/* Cach 2
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+char *sapxep(char *p, int k)
+{
+    int i,j;
+    for(i=0;i<k-1;i++)
+        for(j=i+1;j<k;j++)
+            if(*(p+i)>*(p+j))
+            {
+                char temp = *(p+i);
+                *(p+i) = *(p+j);
+                *(p+j) = temp;
+            }
+    return p;
+}
+
+int main()
+{
+    char a[30], b[30];
+    printf("Nhap chuoi thu 1: ");
+    fflush(stdin);
+    gets(a);
+    printf("Nhap chuoi thu 2: ");
+    fflush(stdin);
+    gets(b);
+
+    printf("\n-----------------------\n");
+
+    int i = strlen(a) + 1, j = strlen(b) + 1;
+    if(i != j)
+    {
+        printf("\n\tN");
+        return 0;
+    }
+    char *p1 = a, *p2 = b;
+    p1 = sapxep(p1,i);
+    p2 = sapxep(p2,i);
+    int k;
+    for(k=0;k<i;k++)
+        if(*(p1+k) != *(p2+k))
+        {
+            printf("\n\tN");
+            return 0;
+        }
+    printf("\n\tY");
+
+    printf("\n\n");
+    return 0;
+}
+*/
